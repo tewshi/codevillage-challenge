@@ -68,7 +68,7 @@ export default defineComponent({
     };
 
     const totalRandomFoods = computed((): number => {
-      return grids.value.filter((value) => value != 0).length;
+      return grids.value.filter((value) => value === 1).length;
     });
 
     const hasPlayer = computed((): boolean => {
@@ -130,6 +130,8 @@ export default defineComponent({
       grids,
       max,
       gridCols,
+      hasPlayer,
+      totalRandomFoods,
       seconds: readonly(seconds),
       eaten: readonly(eaten),
       moves: readonly(moves),
@@ -137,6 +139,7 @@ export default defineComponent({
       eat,
       failed,
       won,
+      getRandomInt,
     };
   },
 });

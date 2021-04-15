@@ -24,25 +24,23 @@ describe("Start.vue", () => {
     expect(wrapper.exists());
   });
 
-  xit("renders props.grid, props.eaten and props.seconds when passed", async () => {
+  it("renders props.grid when passed", async () => {
     const wrapper = shallowMount(Start, {
       global: {
         plugins: [router],
       },
     });
     expect(wrapper.vm.grid).toEqual(grid);
-    expect(wrapper.vm.seconds).toEqual(0);
+    expect(wrapper.vm.grids.length).toEqual(grid * grid);
+    expect(wrapper.vm.max).toEqual(Math.ceil(Math.pow(grid, 2) / 2));
     expect(wrapper.vm.eaten).toEqual(0);
-  });
-
-  xit("renders text content", () => {
-    const wrapper = shallowMount(Start, {
-      global: {
-        plugins: [router],
-      },
-    });
-    expect(wrapper.text()).toContain(`Game over!`);
-    expect(wrapper.text()).toContain(`Total Food: ${0} / ${grid}`);
-    expect(wrapper.text()).toContain(`Time Spent: ${0} seconds`);
+    expect(wrapper.vm.moves).toEqual(0);
+    expect(wrapper.vm.life).toEqual(0);
+    expect(wrapper.vm.totalRandomFoods).toEqual(grid);
+    expect(wrapper.vm.hasPlayer).toBeTruthy();
+    expect(wrapper.vm.getRandomInt).toBeDefined();
+    expect(wrapper.vm.getRandomInt()).toBeLessThanOrEqual(grid * grid);
+    expect(wrapper.vm.won).toBeDefined();
+    expect(wrapper.vm.failed).toBeDefined();
   });
 });
