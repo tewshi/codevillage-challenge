@@ -21,7 +21,9 @@
       </div>
       <router-view />
       <div class="flex justify-center items-center mb-16">
-        <h3 class="text-red text-2xl font-display font-medium mr-4">Game grid</h3>
+        <h3 class="text-red text-2xl font-display font-medium mr-4">
+          Game grid
+        </h3>
         <div class="relative inline-flex">
           <svg
             class="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none"

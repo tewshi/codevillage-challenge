@@ -1,7 +1,5 @@
 <template>
-  <h1 class="text-yellow text-6xl font-display font-semibold mb-6">
-    Bravo!
-  </h1>
+  <h1 class="text-yellow text-6xl font-display font-semibold mb-6">Bravo!</h1>
   <p class="text-default text-2xl font-display font-normal">
     Total Food: <strong>{{ eaten }} / {{ grid }}</strong>
   </p>
