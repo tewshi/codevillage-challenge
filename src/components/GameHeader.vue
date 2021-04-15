@@ -1,9 +1,9 @@
 <template>
-  <div class="flex mb-6 justify-between items-center">
+  <div class="flex flex-col sm:flex-row mb-6 justify-between items-center">
     <p class="text-black text-base font-body font-normal">
       Grid: <strong>{{ grid }} x {{ grid }}</strong>
     </p>
-    <div class="relative flex items-center ml-10">
+    <div class="relative flex items-center ml-10 my-6 sm:my-0">
       <div>
         <div class="life-bg" />
         <div class="life-line" :style="{ width: `${lifeLine}px` }" />

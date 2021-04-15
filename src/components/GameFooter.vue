@@ -1,5 +1,5 @@
 <template>
-  <div class="flex mt-6 justify-between">
+  <div class="flex flex-col sm:flex-row mt-6 justify-between">
     <p class="text-black text-base font-body font-normal">
       Maximum moves: <strong>{{ max }}</strong>
     </p>

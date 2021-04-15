@@ -2,8 +2,10 @@
   <div
     class="home bg-primary min-h-screen px-1 md:px-4 lg:px-9 xl:px-12 py-12 md:py-20 lg:py-24 xl:py-28 grid grid-cols-7"
   >
-    <div class="bg-dots col-span-2" />
-    <div class="col-span-3 p-1 md:p-4 lg:p-9 xl:p-12 text-center">
+    <div class="bg-dots col-span-0 sm:col-span-1 xl:col-span-2" />
+    <div
+      class="col-span-7 sm:col-span-5 xl:col-span-3 p-1 md:p-4 lg:p-9 xl:p-12 text-center"
+    >
       <div class="mx-auto mb-8 w-44">
         <router-link :to="{ name: 'home' }">
           <img
@@ -48,7 +50,7 @@
       </div>
       <button class="btn" @click="start">Start again</button>
     </div>
-    <div class="bg-dots col-span-2" />
+    <div class="bg-dots col-span-0 sm:col-span-1 xl:col-span-2" />
   </div>
 </template>
 
