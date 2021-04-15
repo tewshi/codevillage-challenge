@@ -1,14 +1,14 @@
 import { shallowMount } from "@vue/test-utils";
 import router from "@/router";
-import Failed from "@/views/Failed.vue";
+import Won from "@/views/Won.vue";
 
-describe("Failed.vue", () => {
+describe("Won.vue", () => {
   const grid = 12;
   const seconds = 32;
-  const eaten = 10;
+  const eaten = 12;
 
   const $route = {
-    name: "failed",
+    name: "won",
     params: { grid, seconds, eaten },
   };
 
@@ -18,7 +18,7 @@ describe("Failed.vue", () => {
   });
 
   it("renders component", async () => {
-    const wrapper = shallowMount(Failed, {
+    const wrapper = shallowMount(Won, {
       global: {
         plugins: [router],
       },
@@ -27,7 +27,7 @@ describe("Failed.vue", () => {
   });
 
   it("renders props.grid, props.eaten and props.seconds when passed", async () => {
-    const wrapper = shallowMount(Failed, {
+    const wrapper = shallowMount(Won, {
       global: {
         plugins: [router],
       },
@@ -38,12 +38,12 @@ describe("Failed.vue", () => {
   });
 
   it("renders text content", () => {
-    const wrapper = shallowMount(Failed, {
+    const wrapper = shallowMount(Won, {
       global: {
         plugins: [router],
       },
     });
-    expect(wrapper.text()).toContain(`Game over!`);
+    expect(wrapper.text()).toContain(`Bravo!`);
     expect(wrapper.text()).toContain(`Total Food: ${eaten} / ${grid}`);
     expect(wrapper.text()).toContain(`Time Spent: ${seconds} seconds`);
   });
